@@ -6,4 +6,4 @@ var _down = keyboard_check(ord("S"));
 inputLen = _left || _right || _up || _down;
 if (inputLen) inputDir = point_direction(0, 0, _left - _right, _down - _up);
 
-inputLenFinal = lerp(inputLenFinal, inputLen, 0.12);
+inputLenFinal = lerp(inputLenFinal, inputLen, 0.15);
