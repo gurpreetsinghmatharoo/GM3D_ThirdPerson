@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Functions",
+  "parent":{
+    "name":"GM3D_ThirdPerson",
+    "path":"GM3D_ThirdPerson.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

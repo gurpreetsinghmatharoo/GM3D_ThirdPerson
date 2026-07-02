@@ -1,0 +1,2 @@
+scene.destroy();
+renderer = undefined;

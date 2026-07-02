@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shAnimated",
+  "name":"shAnimated",
+  "parent":{
+    "name":"GM3D_ThirdPerson",
+    "path":"GM3D_ThirdPerson.yyp",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
