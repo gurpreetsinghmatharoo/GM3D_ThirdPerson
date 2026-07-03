@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"AAAAA_INTRO_NOTE",
+  "name":"AAAAA_INTRO_NOTE",
+  "parent":{
+    "name":"GM3D_ThirdPerson",
+    "path":"GM3D_ThirdPerson.yyp",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

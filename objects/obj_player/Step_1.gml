@@ -5,11 +5,13 @@ var _down = keyboard_check(ord("S"));
 var _target = mouse_check_button(mb_right);
 inputShoot = mouse_check_button_pressed(mb_left);
 
+// Input length and direction
 inputLen = _left || _right || _up || _down;
 if (inputLen) inputDir = point_direction(0, 0, _left - _right, _down - _up);
 
 inputLenFinal = lerp(inputLenFinal, inputLen, 0.15);
 
+// Find target if RMB is held
 targetting = undefined;
 if (_target)
 {

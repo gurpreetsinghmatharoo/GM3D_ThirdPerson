@@ -1,11 +1,11 @@
 model = loadScene("gltf/character.glb");
-//node = obj_scene.scene.createNode("player")
 root = model.spawnInto(obj_scene.scene, undefined);
+
+// Enable animation component
 anim = findAnimComponent(root);
 anim.setEnabled(true);
-//mesh = root.getMeshComponent();
-//show_debug_message($"anim {model.animationCount}")
 
+// Animation changing function
 currentAnim = "";
 currentAnimName = "";
 playAnim = function(_animName)
@@ -22,4 +22,5 @@ playAnim = function(_animName)
 }
 playAnim("idle")
 
+// Create shadow
 shadow = loadShadow(0.2);

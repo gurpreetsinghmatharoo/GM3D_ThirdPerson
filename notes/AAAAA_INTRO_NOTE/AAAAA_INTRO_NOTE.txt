@@ -1,0 +1,2 @@
+All shaders, and most of the 'Functions' script, are used from the GM3D-Samples project.
+https://github.com/YoYoGames/GM3D-Samples

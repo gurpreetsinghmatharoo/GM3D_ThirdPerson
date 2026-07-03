@@ -1,9 +1,8 @@
 // Instanced ground
 model = loadScene("models/ground.glb");
-//root = model.spawnInto(obj_scene.scene, undefined);
+assignShaders(model, true); // Use instanced shader
 
-assignShaders(model, true);
-
+// Lay out ground grid
 var _spread = 20;
 var _size = 53.5;
 for (var _x = -_spread; _x < _spread; _x++)

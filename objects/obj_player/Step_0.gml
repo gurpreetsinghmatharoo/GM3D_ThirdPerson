@@ -14,6 +14,7 @@ if (state==STATE.NORMAL) // Idle/walk
     x += _moveX;
     y += _moveY;
     
+    // Set animation
     if (abs(_moveX) + abs(_moveY) > 0.02)
     {
         playAnim(_run ? "sprint" : "walk")
@@ -24,11 +25,13 @@ if (state==STATE.NORMAL) // Idle/walk
         playAnim("idle")
     }
     
+    // Rotate to face moving direction
     alignNode(root, new GM3D_Vec3(lengthdir_x(1, faceAngle), 0, lengthdir_y(1, faceAngle)));
     
     // Shoot
     if (inputShoot)
     {
+        // If targetting, shoot toward target, otherwise shoot toward facing angle
         var _dir = targetting==undefined ? faceAngle : point_direction(x, y, targetting.x, targetting.y);
         instance_create_layer(x, y, layer, obj_fireball, {
             direction: _dir
@@ -52,7 +55,6 @@ else if (state==STATE.ROLL) // Roll
     var _speed = dashSpeed * (_peak*_peak);
     show_debug_message(_speed)
 
-    //var _moveAngle = -(_angle + dashDir) - 90;
     var _moveX = lengthdir_x(_speed, dashDir);
     var _moveY = lengthdir_y(_speed, dashDir);
     
@@ -68,7 +70,7 @@ else if (state==STATE.ROLL) // Roll
         z = 0;
     }
 }
-else if (state==STATE.ATTACK)
+else if (state==STATE.ATTACK) // Fireball attack
 {
     if (targetting!=undefined)
     {
@@ -81,7 +83,7 @@ else if (state==STATE.ATTACK)
         setState(STATE.NORMAL);
     }
 }
-else if (state==STATE.HURT)
+else if (state==STATE.HURT) // Hurt
 {
     var _moveX = lengthdir_x(moveSpeed/2, faceAngle-180);
     var _moveY = lengthdir_y(moveSpeed/2, faceAngle-180);
@@ -112,8 +114,8 @@ if (state!=STATE.HURT && hurtTime <= 0)
 
 if (hurtTime >= 0) hurtTime -= DELTA_SECONDS;
 
+// Move player model (I know Y is up but I'm using the XY in room editor as XZ at runtime so it's swapped 😭)
 root.setLocalPosition(new GM3D_Vec3(x, z, y));
 
-//model.applyAnimation(model.getAnimation(0), DELTA_SECONDS);
-
+// Move shadow
 updateShadow(shadow);
