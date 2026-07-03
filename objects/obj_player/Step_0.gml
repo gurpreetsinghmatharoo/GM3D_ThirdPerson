@@ -26,6 +26,18 @@ if (state==STATE.NORMAL) // Idle/walk
     
     alignNode(root, new GM3D_Vec3(lengthdir_x(1, faceAngle), 0, lengthdir_y(1, faceAngle)));
     
+    // Shoot
+    if (inputShoot)
+    {
+        var _dir = targetting==undefined ? faceAngle : point_direction(x, y, targetting.x, targetting.y);
+        instance_create_layer(x, y, layer, obj_fireball, {
+            direction: _dir
+        })
+        setState(STATE.ATTACK, "attack-melee-right")
+        anim.setSpeed(2.0)
+    }
+    
+    // Roll
     if (keyboard_check_pressed(vk_space))
     {
         setState(STATE.ROLL, "Pick-up");
@@ -54,6 +66,19 @@ else if (state==STATE.ROLL) // Roll
     {
         setState(STATE.NORMAL);
         z = 0;
+    }
+}
+else if (state==STATE.ATTACK)
+{
+    if (targetting!=undefined)
+    {
+        var _dir = point_direction(x, y, targetting.x, targetting.y);
+        alignNode(root, new GM3D_Vec3(lengthdir_x(1, _dir), 0, lengthdir_y(1, _dir)));
+    }
+    
+    if (stateTime > 0.2)
+    {
+        setState(STATE.NORMAL);
     }
 }
 

@@ -21,12 +21,14 @@ setState = function(_state, _anim=undefined)
     if (_anim!=undefined)
     {
         playAnim(_anim);
+        anim.setSpeed(1.0);
     }
 }
 
 enum STATE {
     NORMAL,
-    ROLL
+    ROLL,
+    ATTACK
 }
 
 shadow = undefined;
@@ -34,3 +36,6 @@ shadow = undefined;
 // Targetting
 targetRange = 40;
 targetting = undefined;
+
+// Shoot
+inputShoot = false;
