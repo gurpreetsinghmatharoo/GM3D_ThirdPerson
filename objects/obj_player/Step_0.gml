@@ -81,6 +81,36 @@ else if (state==STATE.ATTACK)
         setState(STATE.NORMAL);
     }
 }
+else if (state==STATE.HURT)
+{
+    var _moveX = lengthdir_x(moveSpeed/2, faceAngle-180);
+    var _moveY = lengthdir_y(moveSpeed/2, faceAngle-180);
+    
+    x += _moveX;
+    y += _moveY;
+    
+    if (stateTime > 0.66)
+    {
+        setState(STATE.NORMAL);
+        hurtTime = 1;
+    }
+}
+
+// Get hurt
+if (state!=STATE.HURT && hurtTime <= 0)
+{
+    var _inst = instance_nearest(x, y, obj_target);
+    if (instance_exists(_inst) && distance_to_object(_inst) < _inst.radius)
+    {
+        setState(STATE.HURT, "die");
+        anim.setSpeed(0.5);
+        var _dir = point_direction(x, y, _inst.x, _inst.y);
+        faceAngle = _dir;
+        alignNode(root, new GM3D_Vec3(lengthdir_x(1, _dir), 0, lengthdir_y(1, _dir)));
+    }
+}
+
+if (hurtTime >= 0) hurtTime -= DELTA_SECONDS;
 
 root.setLocalPosition(new GM3D_Vec3(x, z, y));
 

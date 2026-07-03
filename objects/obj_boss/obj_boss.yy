@@ -8,7 +8,9 @@
   ],
   "managed":true,
   "name":"obj_boss",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},"propertyId":{"name":"radius","path":"objects/obj_target/obj_target.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
+  ],
   "parent":{
     "name":"Models",
     "path":"folders/Models.yy",

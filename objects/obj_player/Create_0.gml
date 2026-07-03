@@ -28,7 +28,8 @@ setState = function(_state, _anim=undefined)
 enum STATE {
     NORMAL,
     ROLL,
-    ATTACK
+    ATTACK,
+    HURT
 }
 
 shadow = undefined;
@@ -39,3 +40,6 @@ targetting = undefined;
 
 // Shoot
 inputShoot = false;
+
+// Hurt
+hurtTime = 0;

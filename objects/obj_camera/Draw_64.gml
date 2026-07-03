@@ -1,1 +1,1 @@
-draw_text(10, 10, $"Angle: {angle}");
+//draw_text(10, 10, $"Angle: {angle}");
