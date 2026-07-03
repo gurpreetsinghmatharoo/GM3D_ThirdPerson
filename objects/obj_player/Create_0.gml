@@ -30,3 +30,7 @@ enum STATE {
 }
 
 shadow = undefined;
+
+// Targetting
+targetRange = 40;
+targetting = undefined;

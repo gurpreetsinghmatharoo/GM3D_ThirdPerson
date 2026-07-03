@@ -5,7 +5,7 @@ if (state==0)
     var _dist = infinity;
     var _dir = random_direction;
     if (instance_exists(obj_player)) _dist = distance_to_object(obj_player); 
-    if (_dist < 40) {
+    if (_dist < range) {
         _dir = point_direction(x, y, obj_player.x, obj_player.y) + dir_wiggle;
         dir_wiggle += random_range(-10, 10);
         dir_wiggle = clamp(dir_wiggle, -25, 25);
