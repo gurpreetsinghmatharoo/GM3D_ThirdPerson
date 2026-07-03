@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shStaticInstanced",
+  "name":"shStaticInstanced",
+  "parent":{
+    "name":"GM3D_ThirdPerson",
+    "path":"GM3D_ThirdPerson.yyp",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

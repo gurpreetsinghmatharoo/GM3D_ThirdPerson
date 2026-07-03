@@ -5,8 +5,10 @@ if (state==STATE.NORMAL) // Idle/walk
     var _angle = obj_camera.angleFinal;
 
     var _moveAngle = -(_angle + inputDir) - 90;
-    var _moveX = lengthdir_x(inputLenFinal*moveSpeed, _moveAngle);
-    var _moveY = lengthdir_y(inputLenFinal*moveSpeed, _moveAngle);
+    var _run = keyboard_check(vk_shift);
+    var _speed = moveSpeed * (1+_run*0.4);
+    var _moveX = lengthdir_x(inputLenFinal*_speed, _moveAngle);
+    var _moveY = lengthdir_y(inputLenFinal*_speed, _moveAngle);
     var _moving = abs(_moveX) + abs(_moveY) > 0.05;
     
     x += _moveX;
@@ -14,7 +16,7 @@ if (state==STATE.NORMAL) // Idle/walk
     
     if (abs(_moveX) + abs(_moveY) > 0.02)
     {
-        playAnim("walk")
+        playAnim(_run ? "sprint" : "walk")
         faceAngle += angle_difference(_moveAngle, faceAngle) * 0.3;
     }
     else
