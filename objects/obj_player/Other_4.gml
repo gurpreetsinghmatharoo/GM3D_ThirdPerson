@@ -21,3 +21,5 @@ playAnim = function(_animName)
     anim.play(currentAnim, true);
 }
 playAnim("idle")
+
+shadow = loadShadow(0.2);

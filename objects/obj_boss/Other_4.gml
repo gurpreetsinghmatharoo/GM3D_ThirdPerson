@@ -20,3 +20,5 @@ playAnim = function(_animName, _speed=1)
     anim.play(currentAnim, true);
 }
 playAnim("walk", 0.3);
+
+shadow = loadShadow(3.3);

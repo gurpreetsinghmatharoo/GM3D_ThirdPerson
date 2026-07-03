@@ -1,6 +1,27 @@
 #macro DELTA_SECONDS delta_time / 1000000
 #macro Vec3 GM3D_Vec3
 
+
+
+
+
+function loadShadow(_size=1)
+{
+    var _model = loadScene("models/shadow.glb");
+    var _root = _model.spawnInto(obj_scene.scene, undefined);
+    _root.setLocalScale(new Vec3(_size, _size, _size))
+    return _root;
+}
+
+function updateShadow(_root)
+{
+    _root.setLocalPosition(new Vec3(x, 0.01, y));
+}
+
+
+
+
+
 /// @func findAnimIndex(_scene, _name)
 ///
 /// @desc Resolves an animation index by exact name match, then substring

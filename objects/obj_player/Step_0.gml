@@ -60,3 +60,5 @@ else if (state==STATE.ROLL) // Roll
 root.setLocalPosition(new GM3D_Vec3(x, z, y));
 
 //model.applyAnimation(model.getAnimation(0), DELTA_SECONDS);
+
+updateShadow(shadow);

@@ -28,3 +28,5 @@ enum STATE {
     NORMAL,
     ROLL
 }
+
+shadow = undefined;
