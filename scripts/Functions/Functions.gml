@@ -1,5 +1,5 @@
 #macro DELTA_SECONDS delta_time / 1000000
-
+#macro Vec3 GM3D_Vec3
 
 /// @func findAnimIndex(_scene, _name)
 ///
