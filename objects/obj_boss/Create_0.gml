@@ -1,3 +1,6 @@
-image_angle = 0;
+direction = 0;
 image_xscale = 5;
 
+move_speed = 0.05;
+state = 0;
+random_direction = 0;
