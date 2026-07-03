@@ -6,12 +6,14 @@ anim.setEnabled(true);
 //mesh = root.getMeshComponent();
 //show_debug_message($"anim {model.animationCount}")
 
-currentAnim = ""
+currentAnim = "";
+currentAnimName = "";
 playAnim = function(_animName)
 {
-    var _newAnim = findAnimIndex(model, _animName);
+    if (currentAnimName == _animName) return;
+    currentAnimName = _animName;
     
-    if (_newAnim == currentAnim) return;
+    var _newAnim = findAnimIndex(model, _animName);
     
     currentAnim = _newAnim;
     anim.setTime(0.0);

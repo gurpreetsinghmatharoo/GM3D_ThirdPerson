@@ -1,23 +1,60 @@
-var _angle = obj_camera.angleFinal;
+stateTime += DELTA_SECONDS;
 
-var _moveAngle = -(_angle + inputDir) - 90;
-var _moveX = lengthdir_x(inputLenFinal*moveSpeed, _moveAngle);
-var _moveY = lengthdir_y(inputLenFinal*moveSpeed, _moveAngle);
-
-x += _moveX;
-y += _moveY;
-
-if (abs(_moveX) + abs(_moveY) > 0.02)
+if (state==STATE.NORMAL) // Idle/walk
 {
-    playAnim("walk")
-    faceAngle += angle_difference(_moveAngle, faceAngle) * 0.3;
+    var _angle = obj_camera.angleFinal;
+
+    var _moveAngle = -(_angle + inputDir) - 90;
+    var _moveX = lengthdir_x(inputLenFinal*moveSpeed, _moveAngle);
+    var _moveY = lengthdir_y(inputLenFinal*moveSpeed, _moveAngle);
+    var _moving = abs(_moveX) + abs(_moveY) > 0.05;
+    
+    x += _moveX;
+    y += _moveY;
+    
+    if (abs(_moveX) + abs(_moveY) > 0.02)
+    {
+        playAnim("walk")
+        faceAngle += angle_difference(_moveAngle, faceAngle) * 0.3;
+    }
+    else
+    {
+        playAnim("idle")
+    }
+    
+    alignNode(root, new GM3D_Vec3(lengthdir_x(1, faceAngle), 0, lengthdir_y(1, faceAngle)));
+    
+    if (keyboard_check_pressed(vk_space))
+    {
+        setState(STATE.ROLL, "Pick-up");
+        dashDir = faceAngle;
+    }
 }
-else
+else if (state==STATE.ROLL) // Roll
 {
-    playAnim("idle")
+    var _angle = obj_camera.angleFinal;
+    var _time = stateTime/dashTime;
+    var _peak = (0.5 - abs(_time-0.5))*2;
+    var _speed = dashSpeed * (_peak*_peak);
+    show_debug_message(_speed)
+
+    //var _moveAngle = -(_angle + dashDir) - 90;
+    var _moveX = lengthdir_x(_speed, dashDir);
+    var _moveY = lengthdir_y(_speed, dashDir);
+    
+    x += _moveX;
+    y += _moveY;
+    
+    alignNode(root, new GM3D_Vec3(lengthdir_x(1, faceAngle), -5 * _peak, lengthdir_y(1, faceAngle)));
+    z = (1-_time)*(_peak*_peak) * 0.4;
+    
+    if (stateTime>dashTime)
+    {
+        setState(STATE.NORMAL);
+        z = 0;
+    }
 }
 
-alignNode(root, new GM3D_Vec3(lengthdir_x(1, faceAngle), 0, lengthdir_y(1, faceAngle)));
-root.setLocalPosition(new GM3D_Vec3(x, 0, y));
+root.setLocalPosition(new GM3D_Vec3(x, z, y));
 
 //model.applyAnimation(model.getAnimation(0), DELTA_SECONDS);
