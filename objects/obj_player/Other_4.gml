@@ -2,7 +2,7 @@ model = loadScene("gltf/character.glb");
 root = model.spawnInto(obj_scene.scene, undefined);
 
 // Enable animation component
-anim = findAnimComponent(root);
+anim = root.getAnimationComponent();
 anim.setEnabled(true);
 
 // Animation changing function
@@ -13,7 +13,7 @@ playAnim = function(_animName)
     if (currentAnimName == _animName) return;
     currentAnimName = _animName;
     
-    var _newAnim = findAnimIndex(model, _animName);
+    var _newAnim = model.getAnimation(_animName); //findAnimIndex(model, _animName);
     
     currentAnim = _newAnim;
     anim.setTime(0.0);

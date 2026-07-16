@@ -197,7 +197,7 @@ function loadScene(_fileName)
 
 	assignShaders(_scene);
 	_scene.freeze();
-	array_push(obj_scene.assets, _scene);
+	//array_push(obj_scene.assets, _scene);
 	return _scene;
 }
 
