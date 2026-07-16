@@ -75,6 +75,7 @@ void main()
 		vec3 L = -gm_Lights_Direction[i].xyz;
 		if (dot(L, L) > 0.0001) {
 			float NdotL = max(0.0, dot(N, normalize(L)));
+            NdotL = round(NdotL*3.0)/3.0;
 			light += NdotL * gm_Lights_Colour[i].rgb;
 		}
 	}

@@ -48,6 +48,10 @@ vec2 transformTexCoord(vec2 uv, vec2 offset, vec2 scale, float rotation)
 	return transformed;
 }
 
+float random_func(vec2 co){
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
 void main()
 {
 	// Base color
@@ -75,6 +79,11 @@ void main()
 		vec3 L = -gm_Lights_Direction[i].xyz;
 		if (dot(L, L) > 0.0001) {
 			float NdotL = max(0.0, dot(N, normalize(L)));
+            float center_dist = NdotL - 0.5;
+            NdotL = 0.5 + center_dist / 1.5;
+            float random_val = random_func(vWorldPosition.xy);
+            NdotL += random_val * 0.02;
+            NdotL = round(NdotL*3.0)/3.0;
 			light += NdotL * gm_Lights_Colour[i].rgb;
 		}
 	}

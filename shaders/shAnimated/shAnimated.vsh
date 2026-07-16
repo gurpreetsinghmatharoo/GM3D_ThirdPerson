@@ -46,6 +46,10 @@ void buildTBN(
 	outT = normalize(outT - outN * dot(outT, outN));
 }
 
+float random_func(vec2 co){
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
 void main()
 {
 	// Skin weights
@@ -60,6 +64,12 @@ void main()
 		+ gm_BoneMatrices[j3] * in_BlendWeight.w;
 
 	vec4 p = skin * vec4(in_Position, 1.0);
+    
+	vec4 worldPos = gm_Matrices[MATRIX_WORLD] * p;
+    /*float random_number = random_func(worldPos.xz);
+    vec3 mult = vec3(40.);
+    p = round(p*vec4(mult, 1.))/vec4(mult, 1.);
+    p = p + vec4(vec3(random_number * 0.05), 0.);*/
 
 	// TBN frame
 	buildTBN(
@@ -70,10 +80,12 @@ void main()
 	vSign = in_Tangent.w;
 
 	// Output
-	vec4 worldPos = gm_Matrices[MATRIX_WORLD] * p;
+	worldPos = gm_Matrices[MATRIX_WORLD] * p;
 	vWorldPosition = worldPos.xyz;
+    
 
-	gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * p;
+	vec4 glPos = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * p;
+    gl_Position = glPos;
 	float fogEnable = gm_VS_FogEnabled ? 1.0 : 0.0;
 	vFogFactor = fogEnable * (gl_Position.w - gm_FogStart) * gm_RcpFogRange;
 	vColor = in_Colour;
