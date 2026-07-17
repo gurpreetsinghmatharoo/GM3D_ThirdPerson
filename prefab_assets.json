@@ -1,0 +1,37 @@
+{
+  "Version": "1.0",
+  "assets": [
+    {
+      "export": 2,
+      "name": "Functions"
+    },
+    {
+      "export": 2,
+      "name": "obj_camera"
+    },
+    {
+      "export": 2,
+      "name": "obj_lighting"
+    },
+    {
+      "export": 2,
+      "name": "obj_scene"
+    },
+    {
+      "export": 2,
+      "name": "shAnimated"
+    },
+    {
+      "export": 2,
+      "name": "shAnimatedInstanced"
+    },
+    {
+      "export": 2,
+      "name": "shStatic"
+    },
+    {
+      "export": 2,
+      "name": "shStaticInstanced"
+    }
+  ]
+}

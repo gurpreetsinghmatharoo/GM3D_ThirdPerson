@@ -1,22 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boss",
+  "%Name":"obj_enemy_parent",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_boss",
+  "name":"obj_enemy_parent",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},"propertyId":{"name":"radius","path":"objects/obj_target/obj_target.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_3d","path":"objects/obj_3d/obj_3d.yy",},"propertyId":{"name":"model_path","path":"objects/obj_3d/obj_3d.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"newpack/Models/GLB format/animal-giraffe.glb\"",},
   ],
   "parent":{
-    "name":"Models",
-    "path":"folders/Models.yy",
+    "name":"Parents",
+    "path":"folders/Parents.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
+    "name":"obj_target",
+    "path":"objects/obj_target/obj_target.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

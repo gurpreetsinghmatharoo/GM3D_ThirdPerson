@@ -12,7 +12,7 @@ if (state==0)
     }
     else {
     	_dir = random_direction;
-        if (random(100)<2) random_direction += random(90);
+        if (random(100)<1) random_direction += random(90);
     }
     direction += angle_difference(_dir, direction) * 0.02;
 }
@@ -20,8 +20,7 @@ if (state==0)
 
 
 // Rotate
-root.setLocalPosition(new Vec3(x, 0, y));
-alignNode(root, new Vec3(lengthdir_x(1, direction), 0, lengthdir_y(1, direction)));
+event_inherited();
 
 
 // Shadow

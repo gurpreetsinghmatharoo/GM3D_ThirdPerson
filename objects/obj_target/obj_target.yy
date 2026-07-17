@@ -9,7 +9,10 @@
     "name":"Parents",
     "path":"folders/Parents.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_3d",
+    "path":"objects/obj_3d/obj_3d.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

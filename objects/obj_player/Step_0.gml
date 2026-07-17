@@ -53,7 +53,6 @@ else if (state==STATE.ROLL) // Roll
     var _time = stateTime/dashTime;
     var _peak = (0.5 - abs(_time-0.5))*2;
     var _speed = dashSpeed * (_peak*_peak);
-    show_debug_message(_speed)
 
     var _moveX = lengthdir_x(_speed, dashDir);
     var _moveY = lengthdir_y(_speed, dashDir);

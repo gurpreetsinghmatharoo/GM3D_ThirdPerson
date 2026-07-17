@@ -433,8 +433,10 @@
   "name":"GM3D_ThirdPerson",
   "resources":[
     {"id":{"name":"AAAAA_INTRO_NOTE","path":"notes/AAAAA_INTRO_NOTE/AAAAA_INTRO_NOTE.yy",},},
+    {"id":{"name":"obj_3d","path":"objects/obj_3d/obj_3d.yy",},},
     {"id":{"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
     {"id":{"name":"obj_fireball","path":"objects/obj_fireball/obj_fireball.yy",},},
     {"id":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},},
     {"id":{"name":"obj_lighting","path":"objects/obj_lighting/obj_lighting.yy",},},

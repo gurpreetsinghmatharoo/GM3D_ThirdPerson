@@ -1,3 +1,7 @@
+
+#export DELTA_SECONDS,Vec3,loadShadow,updateShadow,orbitCamera,alignNode,getForwardVec,loadScene,assignShaders,getBounds
+
+
 #macro DELTA_SECONDS delta_time / 1000000
 #macro Vec3 GM3D_Vec3
 
@@ -20,82 +24,28 @@ function updateShadow(_root)
 
 
 
-
-
-/// @func findAnimIndex(_scene, _name)
-///
-/// @desc Resolves an animation index by exact name match, then substring
-/// match, otherwise falls back to index 0.
-///
-/// @param {Struct.GM3D_Scene} _scene Scene containing animation clips.
-/// @param {String} _name Preferred animation name.
-///
-/// @return {Real} Selected animation index in the scene animation list.
-function findAnimIndex(_scene, _name)
+function loadSceneAndSpawn(_name, _parent=undefined)
 {
-	var _animCount = _scene.animationCount;
-	var _targetName = string_lower(string(_name));
-	var _containsIdx = -1;
-
-	for (var _animIndex = 0; _animIndex < _animCount; ++_animIndex)
-	{
-		var _anim = _scene.getAnimation(_animIndex);
-		var _animName = string(_anim.path);
-
-		var _nameLower = string_lower(_animName);
-		if (_nameLower == _targetName)
-		{
-			return _animIndex;
-		}
-
-		if (_containsIdx < 0 && string_pos(_targetName, _nameLower) > 0)
-		{
-			_containsIdx = _animIndex;
-		}
-	}
-
-	if (_containsIdx >= 0)
-	{
-		return _containsIdx;
-	}
-
-	return 0;
+    var _scene = loadScene(_name);
+    var _root = _scene.spawnInto(global.scene, _parent);
+    return {
+        scene: _scene,
+        node: _root
+    }
 }
 
-
-/// @func findAnimComponent(_node)
-///
-/// @desc Recursively searches a node subtree for the first animation
-/// component.
-///
-/// @param {Struct.GM3D_Node|Undefined} _node Root node to inspect.
-///
-/// @return {Struct.GM3D_AnimationComponent|Undefined} First animation component
-/// found, or undefined when none exists.
-function findAnimComponent(_node)
+function loadSceneInstanced(_name, _parent=undefined)
 {
-	if (_node == undefined)
-	{
-		return undefined;
-	}
+    var _scene = loadScene(_name);
+    assignShaders(_scene, true);
+    return _scene;
+}
 
-	var _directComp = _node.getAnimationComponent();
-	if (_directComp != undefined)
-	{
-		return _directComp;
-	}
-
-	var _children = _node.getChildren();
-	for (var i = 0; i < array_length(_children); ++i)
-	{
-		var _nestedComp = findAnimComponent(_children[i]);
-		if (_nestedComp != undefined)
-		{
-			return _nestedComp;
-		}
-	}
-
-	return undefined;
+function setRotationEuler(_node, _euler)
+{
+    var _rot = new GM3D_Quaternion();
+    _rot = _rot.setFromEuler(_euler);
+    _node.setLocalRotation(_rot);
 }
 
 /// @func orbitCamera(_camNode, _orbitCenter, _orbitRadius, _orbitHeight, _orbitAngle)
