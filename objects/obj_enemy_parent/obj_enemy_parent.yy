@@ -9,6 +9,7 @@
   "name":"obj_enemy_parent",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},"propertyId":{"name":"radius","path":"objects/obj_target/obj_target.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_3d","path":"objects/obj_3d/obj_3d.yy",},"propertyId":{"name":"direction_bias","path":"objects/obj_3d/obj_3d.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"90",},
   ],
   "parent":{
     "name":"Parents",
@@ -31,7 +32,10 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"animSpeed","filters":[],"listItems":[],"multiselect":false,"name":"animSpeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"range","filters":[],"listItems":[],"multiselect":false,"name":"range","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"24","varType":1,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

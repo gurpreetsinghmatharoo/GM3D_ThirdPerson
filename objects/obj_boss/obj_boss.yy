@@ -7,12 +7,14 @@
   "managed":true,
   "name":"obj_boss",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},"propertyId":{"name":"radius","path":"objects/obj_target/obj_target.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_3d","path":"objects/obj_3d/obj_3d.yy",},"propertyId":{"name":"model_path","path":"objects/obj_3d/obj_3d.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"newpack/Models/GLB format/animal-giraffe.glb\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},"propertyId":{"name":"animSpeed","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.3",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},"propertyId":{"name":"radius","path":"objects/obj_target/obj_target.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},"propertyId":{"name":"range","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"40",},
   ],
   "parent":{
-    "name":"Models",
-    "path":"folders/Models.yy",
+    "name":"Enemies",
+    "path":"folders/Models/Enemies.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_parent",

@@ -29,6 +29,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"model_path","filters":[],"listItems":[],"multiselect":false,"name":"model_path","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"\"","varType":2,},
     {"$GMObjectProperty":"v2","%Name":"instanced","filters":[],"listItems":[],"multiselect":false,"name":"instanced","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"direction_bias","filters":[],"listItems":[],"multiselect":false,"name":"direction_bias","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

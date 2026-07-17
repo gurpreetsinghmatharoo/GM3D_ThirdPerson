@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Models","folderPath":"folders/Models.yy","name":"Models","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Models/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Parents","folderPath":"folders/Parents.yy","name":"Parents","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
@@ -436,6 +437,7 @@
     {"id":{"name":"obj_3d","path":"objects/obj_3d/obj_3d.yy",},},
     {"id":{"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_chick","path":"objects/obj_chick/obj_chick.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
     {"id":{"name":"obj_fireball","path":"objects/obj_fireball/obj_fireball.yy",},},
     {"id":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},},
@@ -449,6 +451,7 @@
     {"id":{"name":"shAnimatedInstanced","path":"shaders/shAnimatedInstanced/shAnimatedInstanced.yy",},},
     {"id":{"name":"shStatic","path":"shaders/shStatic/shStatic.yy",},},
     {"id":{"name":"shStaticInstanced","path":"shaders/shStaticInstanced/shStaticInstanced.yy",},},
+    {"id":{"name":"WarpedCheckboardPattern0","path":"sprites/WarpedCheckboardPattern0/WarpedCheckboardPattern0.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

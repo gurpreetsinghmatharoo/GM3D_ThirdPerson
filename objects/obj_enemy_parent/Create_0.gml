@@ -7,7 +7,6 @@ move_speed = 0.05;
 state = 0;
 random_direction = 0;
 dir_wiggle = 0;
-range = 40;
 
 shadow = undefined;
 
@@ -34,4 +33,5 @@ playAnim = function(_animName, _speed=1)
     anim.setSpeed(_speed);
     anim.play(currentAnim, true);
 }
-playAnim("walk", 0.3);
+
+playAnim("walk", animSpeed);
